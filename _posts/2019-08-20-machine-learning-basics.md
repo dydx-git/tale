@@ -47,3 +47,10 @@ about them. Similarity matching can be used directly to find similar entities.
 ### Clustering
 Clustering attempts to group individuals in a population together by their similarity,
 but not driven by any specific purpose. Clustering is useful in pre‐liminary domain exploration to see which natural groups exist.
+
+### Association Rules
+This method attempts to find associations between entities based on transactions involving them. An example co-occurrence question would be: What items are commonly purchased together? 
+
+* #### Clustering vs Association Rules
+While clustering looks at similarity between objects based on the objects’ attributes, co-occurrence grouping considers similarity of objects based on their appearing together in transactions.
+
