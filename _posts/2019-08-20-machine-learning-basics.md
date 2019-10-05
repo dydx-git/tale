@@ -16,14 +16,34 @@ The concept of label stays the same among most machine learning methods.
 Features are what we use as input to the model. 
 Say that we want to predict a movie recommendation: we could give genre, characters, and correlation of other people having the same taste as features for the model to try to predict a good recommendation.
 
-### Classification vs Regression
-Classification is used to predict discrete categories/labels. Like if a it's a shoe or sandal, if it's a person or animal etc. Whereas regression refers to predicting continuous values like the stock value of a company, or perhaps the estimated price of a property.
-
-### Loss
+~~### Loss
 The most basic type of Classification and Regression is there linear types.
 By linear classification, we mean a graph like this:  
 ### Gradient Descent
 
-### Learning Rate
+~~### Learning Rate
 
-## Pandas Basics
+~~## Pandas Basics
+
+## Basic Machine Learning Tools/Methods
+
+### Classification
+For a classification task, a data mining procedure produces a model that, given a new individual, determines which class that individual belongs to. Classification and scoring are very closely related; as we shall see, a model that can do one can usually be modified to do the other.
+
+### Regression
+Also called "Value Estimation". A regression procedure produces a model that, given an individual, estimates the value of the particular variable specific to that individual.
+
+
+#### Classification vs Regression
+Classification is used to predict discrete categories/labels. Like if a it's a shoe or sandal, if it's a person or animal etc. Whereas regression refers to predicting continuous values like the stock value of a company, or perhaps the estimated price of a property.
+Regression is related to classification, but the two are different. Informally, classi‐
+fication predicts whether something will happen, whereas regression predicts how
+much something will happen.
+
+### Similarity Matching
+Similarity matching attempts to identify similar individuals based on data known
+about them. Similarity matching can be used directly to find similar entities.
+
+### Clustering
+Clustering attempts to group individuals in a population together by their similarity,
+but not driven by any specific purpose. Clustering is useful in pre‐liminary domain exploration to see which natural groups exist.
