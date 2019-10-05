@@ -16,14 +16,14 @@ The concept of label stays the same among most machine learning methods.
 Features are what we use as input to the model. 
 Say that we want to predict a movie recommendation: we could give genre, characters, and correlation of other people having the same taste as features for the model to try to predict a good recommendation.
 
-~~### Loss
+### Loss 
 The most basic type of Classification and Regression is there linear types.
 By linear classification, we mean a graph like this:  
-### Gradient Descent
+~~### Gradient Descent~~
 
-~~### Learning Rate
+~~### Learning Rate~~
 
-~~## Pandas Basics
+~~## Pandas Basics~~
 
 ## Basic Machine Learning Tools/Methods
 
