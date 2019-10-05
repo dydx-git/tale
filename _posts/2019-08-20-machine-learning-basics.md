@@ -34,7 +34,7 @@ For a classification task, a data mining procedure produces a model that, given 
 Also called "Value Estimation". A regression procedure produces a model that, given an individual, estimates the value of the particular variable specific to that individual.
 
 
-#### Classification vs Regression
+* #### Classification vs Regression
 Classification is used to predict discrete categories/labels. Like if a it's a shoe or sandal, if it's a person or animal etc. Whereas regression refers to predicting continuous values like the stock value of a company, or perhaps the estimated price of a property.
 Regression is related to classification, but the two are different. Informally, classi‐
 fication predicts whether something will happen, whereas regression predicts how
