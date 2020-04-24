@@ -55,3 +55,25 @@ def remove_special_characters(text, remove_digits=False):
     text = re.sub(pattern, ", text)
     return text
 ```
+
+### Spelling Correction
+Wrong spellings and typo are always unwelcomed. Here's a simple method to correct them:
+```python
+from textblob import Word
+def correct_spell(text):
+    words = nltk.word_tokenize(text)
+    # you can also try Word.spellcheck() for spell suggestions
+    corrected_words = [Word(word).correct() for word in words]
+    return ' '.join(corrected_words)
+```
+
+### Lemmatizing Text
+Words are often affixed in languages to provide better understanding and grammar. However, to a machine learning model, *wisely* and *wise* may seem like two different words so we can get the lemma which is a lexicographically correct root word. Here's how:
+```python
+def lemmatize_text(text):
+    text = nlp(text)
+    text = ' '.join([
+        word.lemma_ if word.lemma_ != '-PRON-' else word.text for word in text
+    ])
+    return text
+```
