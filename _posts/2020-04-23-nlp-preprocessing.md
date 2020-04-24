@@ -77,3 +77,24 @@ def lemmatize_text(text):
     ])
     return text
 ```
+
+### Removing Stopwords
+And finally, words like *of*, *the*, *an* etc can occupy the majority of word count in a document so we can remove them like so:
+```python
+stopword_list = nltk.corpus.stopwords.words('english')
+# We want the negation to stay in the document
+stopword_list.remove('no')
+stopword_list.remove('not')
+def remove_stopwords(text, is_lower_case=False):
+    words = nltk.word_tokenize(text)
+    words = [word.strip() for word in words]
+    if is_lower_case:
+        filtered_words = [word for word in words if word not in stopword_list]
+    else:
+        filtered_words = [
+            word for word in words if word.lower() not in stopword_list
+        ]
+    return ' '.join(filtered_words)
+```
+
+There are possibly more ways to wrangle text but these should be plentiful for the basic ones.
