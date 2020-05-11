@@ -17,12 +17,12 @@ So, to get started:
 2. Hide layers to get the exact appearance you want. But don't hide the color layer (if exists). We need that. ![hide-useless-layers][hide-useless-layers]
 3. Select layers that you want to make transparent. Please do NOT select Background layer as we need that. Right-click and Merge Layer. ![merge-layers][merge-layers]
 4. Right-click on the newly-created layer and select Blending Options ![blending-options][blending-options]
-5. Change the Knockout to Deep and the Opacity slider controls the transparency. Personally, I like to set it to anywhere from 30-50.![knockout-effect][knockout-effect]
+5. Change the Knockout to Deep and the Opacity slider controls the transparency. Personally, I like to set it to anywhere from 30-50. ![knockout-effect][knockout-effect]
 
 The final result should look like this: ![final][final]
 
-[hide-useless-layers](../images/hide-useless-layers.png)
-[merge-layers](../images/merge-layers.png)
-[blending-options](../images/blending-options.png)
-[knockout-effect](../images/knockout-effect.png)
-[final](../images/final.png)
+[hide-useless-layers]: ../images/hide-useless-layers.png
+[merge-layers]: ../images/merge-layers.png
+[blending-options]: ../images/blending-options.png
+[knockout-effect]: ../images/knockout-effect.png
+[final]: ../images/final.png
