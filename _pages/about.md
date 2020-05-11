@@ -1,15 +1,16 @@
 ---
 layout: post
 title: "About"
-author: "Chester"
+author: "Muhammad Taha"
 permalink: /about/
 ---
 
-A friend of mine writes short stories. One sunny day, I asked if he wanted a website to showcase his works and he agreed. I decided to use GitHub Pages to host his site. That way he wouldn't have to buy a domain and a server.
+I'm just your regular friendly neighborhood teenage dreamer ;)
+I've a huge passion for knowledge. I love reading books, both fictional and non-fictional. I despise arrogant humans. I love pop and electronic music. I like to think that I'm rational and objective in my everyday dealings. I'm of a humanist view. I have a deep curiosity about Islam and I'm a proud muslim. 
 
-While doing some research up on GitHub Pages, I accidentally chanced upon this _simple, blog-aware, static site generator_ called [Jekyll](https://jekyllrb.com/) which works really well with GitHub Pages. I figured it would do just fine for my friend and I set about searching for a pretty theme. I wanted a theme with a _book-ish_ vibe. Unfortunately, most of the themes were too modern. Eventually, I caved and begun working on my own theme. With the help of [Poole](https://github.com/poole/poole), the Jekyll Butler, I was able to build **Tale**.
+I study at a public university in Karachi: NEDUET in the disc. of Computer Information Systems Engineering (CIS 2017-18 batch). This is my personal blog that I'll use to discover more about the computers and the world around me. This blog is a platform for me to speak out my opinions at lengths and find myself.
 
-## Contribute
-Feel free to create an issue or make a pull request on [GitHub](https://github.com/chesterhow/tale).
+## Favourite Quote
+<cite>&mdash; God, grant me the serenity to accept the things I cannot change,: Courage to change the things I can,: And wisdom to know the difference.</cite>
 
 Thanks for reading!
