@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Making a foreground subject transparent without removing textures in Photoshop"
+categories: Graphics
+author: "Muhammad Taha"
+---
+
+Recently while working on a site, I needed some t-shirt mockups. The site had a product designer and I needed a lot of different colors for each product. 
+So, I settled on using some css to color transparent parts of the mockup. [This is the PSD that we'll be working on as a sample](https://graphictwister.com/flat-t-shirt-mockup/).
+
+Now, I could just open up its png in Photoshop and pick the t-shirt color range using magic tool, delete it and get a transparent shirt. 
+But, it was also removing the texture. And if I was careful enough to exclude the texture from my selection, then the texture had a prior color of its own.. so basically the shirt itself got transparent but the texture on top of it had color so it didn't work out at all.
+And besides, if you have a layered PSD file then why experiment with PNG anyway.
+
