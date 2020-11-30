@@ -13,7 +13,7 @@ Unlike React or Vue, Svelte is inherently reactive. Reactivity is built into the
 
 It's almost always a better idea to use some form validation framework but lets try to build one in Svelte just for the sake of learning it.
 
-## Form Validation:
+## Forms in Svelte:
 ```javascript
 <script>
   import { onMount, onDestroy } from "svelte";
@@ -47,3 +47,50 @@ It's almost always a better idea to use some form validation framework but lets 
 ```
 `export`ing variables in the above few initial lines of code makes those variables available as props of this component to its parent. Going down further, you'll notice this weird syntax with `$:`. What this does is tell the JS engine the variable on the left depends on the one on the right side of `=` and that it should update the dependent variable whenever any changes occur. This should make more sense later on.
 
+### Validation Logic
+Here's the actual form validation logic:
+```javascript
+  export let isFormInvalid;
+
+  let isClientNameDirty = false;
+  let isEmailDirty = false;
+  let isPhoneDirty = false;
+  let isAddressDirty = false;
+  let isPaymentMethodDirty = false;
+  let isCompanyDirty = false;
+  let isEmployeeDirty = false;
+
+  $: isClientNameEmpty = clientName.length < 1 ? true : false;
+  $: isEmailInvalid = !validateEmail(email.split(" ")[0]);
+  $: isPhoneEmpty = phone.length < 1 ? true : false;
+  $: isAddressEmpty = address.length < 1 ? true : false;
+
+  $: isPaymentMethodEmpty =
+    isPaymentMethodDirty && selectedPaymentMethod == null ? true : false;
+
+  $: isCompanyEmpty = isCompanyDirty && selectedCompany == null ? true : false;
+
+  $: isEmployeeEmpty =
+    isEmployeeDirty && selectedEmployee == null ? true : false;
+
+  $: isFormInvalid =
+    isClientNameEmpty ||
+    isPhoneEmpty ||
+    isEmailInvalid ||
+    isAddressEmpty ||
+    isPaymentMethodEmpty ||
+    isCompanyEmpty ||
+    isEmployeeEmpty;
+
+  function validateEmail(value) {
+    return (
+      (value &&
+        !!value.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )) ||
+      false
+    );
+  }
+```
+
+Lets focus on the `isClientNameEmpty` line and see how that works. Later on in the HTML of this form, you'll see that `clientName` is binding to a textbox. Whenever the user enters any text in the textbox, the `isClientNameEmpty` line will reevaluate whatever's on the right side and update the dependent variable. So, each letter entered will trigger a reaction and in turn will update the `isClientNameEmpty` variable. 
