@@ -92,4 +92,5 @@ Here's the actual form validation logic:
 ```
 
 Lets focus on the `isClientNameEmpty` line and see how that works. Later on in the HTML of this form, you'll see that `clientName` is binding to a textbox. Whenever the user enters any text in the textbox, the `isClientNameEmpty` line will reevaluate whatever's on the right side and update the dependent variable. So, each letter entered will trigger a reaction and in turn will update the `isClientNameEmpty` variable. 
+
 A point to be noted here: if there's multiple variables being evaluated then the update will trigger if any of them change. So, for example, `isPaymentMethodEmpty` line will reevaluate whenever either `isPaymentMethodDirty` or `selectedPaymentMethod` gets changed.
