@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Svelte | My favourite framework for a great DX"
+title: "Svelte | My favourite JS framework for a great DX"
 categories: Code
 author: "Muhammad Taha"
 ---
@@ -8,7 +8,9 @@ author: "Muhammad Taha"
 I'm a sucker for underdogs. I love to give them a chance. When learning something new I'd much rather go for a better but lesser known framework. 
 Of course, something only being off the beaten track shouldn't be the only attribute it should have. It should also be better than its more popular counterpart.
 
-And svelte fits the bill 
+And svelte fits the bill perfectly. It's a lean and super fast JS framework that disappears once the code has been built. Yes, the apps developed using svelte are "built". Svelte has a compiler that traspiles `.svelte` files to vanilla javascript. 
+Unlike React or Vue, Svelte is inherently reactive. Reactivity is built into the language and doesn't pollute your code with `useState` and such.
+
 
 So, to get started:
 1. Open the PSD file that you downloaded from the above link.
