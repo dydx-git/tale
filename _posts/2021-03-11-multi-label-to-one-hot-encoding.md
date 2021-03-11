@@ -12,6 +12,7 @@ Following are the dependencies:
 * Scikit-learn
 
 Here's the code to do that:
+
 {% highlight python %}
 import pandas as pd
 import numpy as np
