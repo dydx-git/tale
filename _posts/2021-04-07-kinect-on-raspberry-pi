@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Setting up Kinect for Linux"
+categories: Tutorial
+author: "Muhammad Taha"
+---
+
+Windows is what I usually use. It's what I grew up with. It's what I know best. Nevertheless, it hasn't adapted very well to ARM. There have been push to bring Windows 10 to ARM from Microsoft since 2017 but 
+those haven't been very successful. Hence, it's really hard to get Windows to run on a microcomputer like Raspberry Pi. So, going with Linux was the obvious choice. 
+
+I wanted to interact with my Pi using hands-free gestures so I went with a Kinect for tracking my hands (which I later realized is succeeded by PoseNet). 
+
+Here's how you would go about setting it up and running on Raspberry Pi OS:
+
+## Hook it up
+Plug the device in then run `lsusb -v -d 045e:02ae | grep -e "Bus\|iSerial"` or simply `lsusb -v` as `sudo` and if you see something like this:
+```bash
+iManufacturer           2 Microsoft
+iProduct                1 Xbox NUI Camera
+iSerial                 3 XXXXXXXXXXXXXXXX
+```
+Then Linux recognizes your Kinect.
+
+## Installing dependencies
+Install the following dependencies before attempting to install `libfreenect`:
+```bash
+sudo apt-get install git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev
+```
