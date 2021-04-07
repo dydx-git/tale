@@ -92,13 +92,13 @@ I'm taking Python 3 here as an example.
 ```
 sudo python3 libfreenect/src/fwfetcher.py
 ```
-Wait a bit for it to download. Then find the directory where audios.bin is downloaded (probably in `libfreenect` or `libfreenect/src`) and copy it to `/usr/local/shared/libfreenect`.
+Wait a bit for it to download. Then find the directory where `audios.bin` was downloaded (probably in `libfreenect` or `libfreenect/src`) and copy it to `/usr/local/shared/libfreenect`.
 Then restart. 
 
 Finally running `freenect-micview` should work and a screen should pop up showing a visualization of sound waves. Exit gracefully from the program by either pressing `q` or `ctrl+c`.
-Do not press `ctrl+z` as that would not unlock the process and you'd have to restart your system.
+Do not press `ctrl+z` as that would not unlock the process and you'd have to restart your system. Finally, run `freenect-glview`.
 
-Another important thing to note it if you ever get the `could not open device` error. Try the following things:
+Another important thing to note is if you ever get the `could not open device` error. Try the following things:
 * Unplug and plug Kinect back in
 * Try it with `sudo`
 * Run `freenect-micview`
