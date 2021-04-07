@@ -72,12 +72,19 @@ Restart your computer after creating the `.rules` file then attempt:
 If `freenect-glview` fails, then try it with sudo. 
 If it throws the following error:
 > Kinect camera test
+> 
 > Number of devices found: 1
+> 
 > Found sibling device [same parent]
+> 
 > Failed to set the LED of K4W or 1473 device: -1
+> 
 > Found sibling device [same parent]
+> 
 > Could not open device: -1
+> 
 > Could not open device
+
 Then try `freenect-micview` or `freenect-camtest`. If either of those fail then you're probably missing an `audios.bin` file.
 
 You can get it by using python (check your environment to see if you have 2 or 3 installed). Use the python version that you mainly use.
