@@ -4,9 +4,6 @@ title: "Year In Review: 2017"
 categories: Opinion
 author: "Muhammad Taha"
 ---
-
-![Placeholder image](http://dydx.me/images/2017-year-in-review.jpg "year-in-review-17")
-
 An year goes by and so does a chapter out of my life book. A chapter that shook me to my core, one that made me question who I am and what I stand for, that made me doubt the blind trust I had on people, that made me cynical. 2017 is by far the most dramatic chapter of my life.
 
 To be really honest, I have a strong opinion against declaring a particular year as "the worst year of my life". As I firmly believe that time can neither be good nor bad. Time is objective and impersonal. That's why Allah swears by time. Time is mysterious and unique in its nature but so is every humanbeing in one way or another. Hence they're both connected: Humans and the time they live their lives in. 
