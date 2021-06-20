@@ -47,12 +47,12 @@ class GmailConnector
         echo "<a href='{$authUrl}'>Click here to link your account</a>";
     }
 
-    public function credentialsInBrowser()
+    private function credentialsInBrowser()
     {
         return isset($_GET['code']) ? true : false;
     }
 
-    public function createClient()
+    private function createClient()
     {
         $client = new Google_Client();
         $client->setApplicationName('Gmail API PHP Quickstart');
