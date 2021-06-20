@@ -1,1 +1,4 @@
-Google's documentation for Gmail API Client Library for PHP is very basic. It has a quickstart guide which is somewhat useful. 
+Google's documentation for Gmail API Client Library for PHP is very basic. It has a quickstart guide which is somewhat useful but it gets you started with code which works on CLI during connection.
+There's obviously a better way to do this so here you go:
+
+# Connecting to Gmail
