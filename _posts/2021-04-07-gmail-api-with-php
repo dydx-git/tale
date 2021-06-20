@@ -2,3 +2,102 @@ Google's documentation for Gmail API Client Library for PHP is very basic. It ha
 There's obviously a better way to do this so here you go:
 
 # Connecting to Gmail
+Start with installing the Gmail API through Composer:
+`composer require google/apiclient:^2.0`
+
+Then create a new PHP file say, `GmailConnector.php`:
+```php
+<?php
+
+use enums\Company;
+
+class GmailConnector
+{
+    public bool $isConnected;
+    protected string $credentials;
+    protected Company $company;
+
+    public function __construct(Company $company)
+    {
+        $this->credentials = __DIR__ . '/../../../../doc_includes/credentials.json';
+        $this->isConnected = false;
+        $this->company = $company;
+        $this->client = $this->createClient();
+    }
+
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    public function getCredentials()
+    {
+        return $this->credentials;
+    }
+
+    public function getUnauthenticatedData()
+    {
+        $authUrl = $this->client->createAuthUrl();
+
+        echo "<a href='{$authUrl}'>Click here to link your account</a>";
+    }
+
+    public function credentialsInBrowser()
+    {
+        return isset($_GET['code']) ? true : false;
+    }
+
+    public function createClient()
+    {
+        $client = new Google_Client();
+        $client->setApplicationName('Gmail API PHP Quickstart');
+        $client->setScopes(Google_Service_Gmail::MAIL_GOOGLE_COM);
+        $client->setAuthConfig($this->credentials);
+        $client->setAccessType('offline');
+        $client->setPrompt('select_account consent');
+
+        // Load previously authorized token from a file, if it exists.
+        // The file token.json stores the user's access and refresh tokens, and is
+        // created automatically when the authorization flow completes for the first
+        // time.
+        $tokenPath = __DIR__ . "/tokens/{$this->company}-token.json";
+        if (file_exists($tokenPath)) {
+            $accessToken = json_decode(file_get_contents($tokenPath), true);
+            $client->setAccessToken($accessToken);
+        }
+
+        // If there is no previous token or it's expired.
+        if ($client->isAccessTokenExpired()) {
+            // Refresh the token if possible, else fetch a new one.
+            if ($client->getRefreshToken()) {
+                $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
+            } elseif ($this->credentialsInBrowser()) {
+                $authCode = $_GET['code'];
+
+                // Exchange authorization code for an access token.
+                $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
+                $client->setAccessToken($accessToken);
+
+                // Check to see if there was an error.
+                if (array_key_exists('error', $accessToken)) {
+                    throw new Exception(join(', ', $accessToken));
+                }
+            } else {
+                $this->isConnected = false;
+
+                return $client;
+            }
+            // Save the token to a file.
+            if (!file_exists(dirname($tokenPath))) {
+                mkdir(dirname($tokenPath), 0700, true);
+            }
+            file_put_contents($tokenPath, json_encode($client->getAccessToken()));
+        }
+        // echo 'not expired';
+
+        $this->isConnected = true;
+
+        return $client;
+    }
+}
+```
