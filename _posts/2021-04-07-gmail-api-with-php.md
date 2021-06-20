@@ -9,6 +9,8 @@ Then create a new PHP file say, `GmailConnector.php`:
 ```php
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 class GmailConnector
 {
     public bool $isConnected;
@@ -97,5 +99,38 @@ class GmailConnector
     }
 }
 ```
-In order to get this file to work, you need your Google Cloud credentials for the Gmail API. Follow [this guide to create a project](https://developers.google.com/workspace/guides/create-project) in Google Cloud for your Gmail.
-Then follow [this to create and download your credentials](https://developers.google.com/workspace/guides/create-credentials#web). Now make it accessible by modifying `$this->credentials` variable in the constructor.
+In order to get this file to work, you need your Google Cloud credentials for the Gmail API. 
+* Follow [this guide to create a project](https://developers.google.com/workspace/guides/create-project) in Google Cloud for your Gmail.
+* Then follow [this to create and download your credentials](https://developers.google.com/workspace/guides/create-credentials#web). 
+* Now make it accessible by modifying `$this->credentials` variable in the constructor.
+
+# Authenticating through OAuth 2.0
+Create another file in the same directory and name it something like `GmailAuthenticator.php`:
+```php
+<?php
+
+use enums\Company;
+
+require __DIR__ . '/vendor/autoload.php';
+
+class GmailAuthenticator
+{
+    private GmailConnector $connector;
+
+    public function __construct()
+    {
+        $this->connector = new GmailConnector();
+
+        if (!$this->connector->isConnected) {
+            $this->connector->getUnauthenticatedData();
+        }
+    }
+
+    public function getClientHelper()
+    {
+        $gmail = new GmailClientHelper($this->connector->getClient());
+        return $gmail;
+    }
+}
+```
+Next, we need the `GmailClientHelper.php` file:
