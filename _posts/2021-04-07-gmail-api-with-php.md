@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Using Gmail API with PHP 7: Send/read emails and attachments"
+categories: Tutorial
+author: "Muhammad Taha"
+---
+
 Google's documentation for Gmail API Client Library for PHP is very basic. It has a quickstart guide which is somewhat useful but it gets you started with code which works on CLI during connection.
 There's obviously a better way to do this so here you go:
 
