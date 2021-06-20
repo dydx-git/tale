@@ -9,19 +9,15 @@ Then create a new PHP file say, `GmailConnector.php`:
 ```php
 <?php
 
-use enums\Company;
-
 class GmailConnector
 {
     public bool $isConnected;
     protected string $credentials;
-    protected Company $company;
 
-    public function __construct(Company $company)
+    public function __construct()
     {
-        $this->credentials = __DIR__ . '/../../../../doc_includes/credentials.json';
+        $this->credentials = __DIR__ . '/credentials.json';
         $this->isConnected = false;
-        $this->company = $company;
         $this->client = $this->createClient();
     }
 
@@ -60,7 +56,7 @@ class GmailConnector
         // The file token.json stores the user's access and refresh tokens, and is
         // created automatically when the authorization flow completes for the first
         // time.
-        $tokenPath = __DIR__ . "/tokens/{$this->company}-token.json";
+        $tokenPath = __DIR__ . "/tokens/token.json";
         if (file_exists($tokenPath)) {
             $accessToken = json_decode(file_get_contents($tokenPath), true);
             $client->setAccessToken($accessToken);
@@ -101,3 +97,5 @@ class GmailConnector
     }
 }
 ```
+In order to get this file to work, you need your Google Cloud credentials for the Gmail API. Follow [this guide to create a project](https://developers.google.com/workspace/guides/create-project) in Google Cloud for your Gmail.
+Then follow [this to create and download your credentials](https://developers.google.com/workspace/guides/create-credentials#web). Now make it accessible by modifying `$this->credentials` variable in the constructor.
