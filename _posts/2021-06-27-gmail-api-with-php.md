@@ -108,7 +108,9 @@ class GmailConnector
 ```
 In order to get this file to work, you need your Google Cloud credentials for the Gmail API. 
 * Follow [this guide to create a project](https://developers.google.com/workspace/guides/create-project) in Google Cloud for your Gmail.
+
 * Then follow [this to create and download your credentials](https://developers.google.com/workspace/guides/create-credentials#web). 
+
 * Now make it accessible by modifying `$this->credentials` variable in the constructor.
 
 # Authenticating through OAuth 2.0
