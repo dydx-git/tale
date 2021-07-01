@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Using Gmail API with PHP 7: Send or read emails, get attachments and more"
+title: "Using Gmail API with PHP: Send or read emails, get attachments and more"
 categories: Tutorial
 author: "Muhammad Taha"
 ---
@@ -497,5 +497,4 @@ $gmail = $connector->getClientHelper();
 var_dump($gmail->readLabels());
 ```
 
-This should print out the labels that you have on your Gmail account after you've signed in.
-And there you have it! Using Gmail API with PHP.
+This should print out the labels that you have on your Gmail account
