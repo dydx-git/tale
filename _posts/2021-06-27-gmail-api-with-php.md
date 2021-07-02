@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Gmail API with PHP: Send or read emails, get attachments and more"
-categories: Tutorial
+categories: Code
 author: "Muhammad Taha"
 ---
 
